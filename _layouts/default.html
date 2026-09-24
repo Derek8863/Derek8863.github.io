@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="theme-color" content="#f7f4ee">
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="返回首页"><span class="brand-mark">D<span>.</span></span><span class="brand-name">Derek 的博客</span></a>
+      <nav aria-label="主导航">
+        <a href="{{ '/' | relative_url }}">文章</a>
+        <a href="{{ '/about/' | relative_url }}">关于</a>
+        <a href="https://github.com/Derek8863" rel="me">GitHub ↗</a>
+      </nav>
+    </header>
+    <main id="content">{{ content }}</main>
+    <footer class="site-footer">
+      <span>© {{ site.time | date: '%Y' }} Derek</span>
+      <span>用文字留下思考，用 GitHub Pages 发布。</span>
+    </footer>
+  </div>
+</body>
+</html>
