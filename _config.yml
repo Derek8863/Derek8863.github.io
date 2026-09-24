@@ -1,0 +1,9 @@
+title: "Derek 的博客"
+description: "关于代码、系统设计和日常观察。"
+url: "https://derek8863.github.io"
+baseurl: ""
+timezone: Asia/Shanghai
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+exclude:
+  - README.md
