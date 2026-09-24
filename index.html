@@ -2,29 +2,30 @@
 layout: default
 title: 首页
 ---
-<section class="hero">
-  <p class="eyebrow"><span class="status-dot"></span> NOTES FROM DEREK</p>
-  <h1>记录值得<span>想清楚</span>的事。</h1>
-  <p class="hero-copy">关于代码、系统设计和日常观察。慢慢写，认真想，把有价值的经验留在这里。</p>
-  <a class="hero-link" href="#articles">阅读文章 <span aria-hidden="true">↗</span></a>
-  <div class="hero-decoration" aria-hidden="true">思考<br>记录<br>分享<span>＊</span></div>
+<section class="intro">
+  <h1>你好，我是 Derek。</h1>
+  <p>这是我的个人博客。写一些与编程有关的东西，也记下偶尔想说的话。</p>
 </section>
-<section id="articles" class="articles" aria-labelledby="articles-heading">
-  <div class="section-heading"><div><p class="eyebrow">WRITING</p><h2 id="articles-heading">最新文章</h2></div><span>{{ site.posts.size }} 篇</span></div>
+<section class="articles" aria-labelledby="articles-heading">
+  <div class="section-heading">
+    <h2 id="articles-heading">文章</h2>
+    <span>共 {{ site.posts.size }} 篇</span>
+  </div>
   {% if site.posts.size > 0 %}
-    <div class="post-list">
+  <ol class="post-list">
     {% for post in site.posts %}
+    <li>
       <article class="post-card">
-        <div class="post-date"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time></div>
-        <div class="post-card-content">
+        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+        <div>
           <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-          <p>{{ post.description | default: post.excerpt | strip_html | truncate: 120 | escape }}</p>
+          <p>{{ post.description | default: post.excerpt | strip_html | truncate: 100 | escape }}</p>
         </div>
-        <a class="card-arrow" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title | escape }}》">↗</a>
       </article>
+    </li>
     {% endfor %}
-    </div>
+  </ol>
   {% else %}
-    <p class="empty-state">第一篇文章，正在路上。</p>
+  <p class="empty-state">还没有文章。</p>
   {% endif %}
 </section>

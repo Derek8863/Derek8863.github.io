@@ -2,12 +2,12 @@
 layout: default
 ---
 <article class="post">
-  <a class="back-link" href="{{ '/' | relative_url }}">← 返回文章列表</a>
+  <a class="back-link" href="{{ '/' | relative_url }}">← 所有文章</a>
   <header class="post-header">
-    <p class="eyebrow">文章 · <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y 年 %m 月 %d 日' }}</time></p>
+    <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y 年 %m 月 %d 日' }}</time>
     <h1>{{ page.title | escape }}</h1>
     {% if page.description %}<p class="post-summary">{{ page.description | escape }}</p>{% endif %}
   </header>
   <div class="post-content prose">{{ content }}</div>
-  <div class="post-end"><span>感谢阅读</span><a href="{{ '/' | relative_url }}">更多文章 →</a></div>
+  <div class="post-end"><a href="{{ '/' | relative_url }}">← 返回文章列表</a></div>
 </article>
