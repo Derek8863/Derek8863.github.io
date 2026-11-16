@@ -1,0 +1,10 @@
+.harness-diagram { margin: 2em 0; }
+.harness-diagram > a { display: block; overflow-x: auto; border-radius: 16px; }
+.harness-diagram img { display: block; width: 100%; min-width: 640px; height: auto; }
+.harness-diagram figcaption { margin-top: 10px; color: #62675e; font-size: 13px; line-height: 1.8; }
+.post-content table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.5em 0; font-size: 15px; }
+.post-content th, .post-content td { padding: 9px 15px; border-bottom: 1px solid #dedfd8; text-align: left; }
+.post-content th { background: #f0f0eb; }
+.post-content pre { max-width: 100%; overflow-x: auto; }
+.post-content :not(pre) > code { overflow-wrap: anywhere; }
+@media (max-width: 600px) { .harness-diagram figcaption::after { content: " 可横向滑动图示，或点开原图。"; } }

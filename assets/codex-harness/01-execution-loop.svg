@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" role="img" aria-labelledby="title desc">
+<title id="title">一次命令调用，怎样变成下一次推理的输入</title>
+<desc id="desc">模型向 Harness 提出调用；Harness 处理参数和执行策略后，通过命令工具启动进程。输出和退出状态返回 Harness，再进入后续模型推理。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#287b79"/></marker></defs>
+<rect width="900" height="660" rx="20" fill="#f2f7f7"/>
+<g font-family="Microsoft YaHei, PingFang SC, sans-serif" fill="#1c333a">
+<text x="36" y="48" font-size="24" font-weight="700">一次命令调用，怎样变成下一次推理的输入</text>
+<text x="36" y="79" font-size="16" fill="#576e73">以本地命令工具为例 · 省略流式输出和长进程会话</text>
+<g fill="#fff" stroke="#b8d1d1"><rect x="50" y="112" width="200" height="66" rx="12"/><rect x="350" y="112" width="200" height="66" rx="12"/><rect x="650" y="112" width="200" height="66" rx="12"/></g>
+<g font-size="22" font-weight="700" text-anchor="middle"><text x="150" y="153">模型</text><text x="450" y="153">Harness</text><text x="750" y="153">工具 / 执行环境</text></g>
+<g stroke="#b8cdcf" stroke-width="2" stroke-dasharray="6 7"><path d="M150 178V592"/><path d="M450 178V592"/><path d="M750 178V592"/></g>
+<g stroke="#287b79" stroke-width="2.5" fill="none" marker-end="url(#arrow)"><path d="M150 232H450"/><path d="M450 328H750"/><path d="M750 416H450"/><path d="M450 498H150"/><path d="M150 576H450"/></g>
+<g font-size="18" text-anchor="middle"><text x="300" y="218">① 提出 exec_command 调用</text><text x="600" y="314">② 启动 go test 进程</text><text x="600" y="402">③ 返回输出与退出状态</text><text x="300" y="484">④ 结果纳入下一次推理输入</text><text x="300" y="562">⑤ 提出下一步调用或最终回复</text></g>
+<rect x="372" y="250" width="324" height="37" rx="8" fill="#dfeded"/><text x="534" y="275" font-size="16" text-anchor="middle">解析参数 · 分发工具 · 按配置处理权限</text>
+<rect x="665" y="345" width="169" height="33" rx="8" fill="#dfeded"/><text x="750" y="368" font-size="16" text-anchor="middle">真实运行测试断言</text>
+<text x="36" y="630" font-size="17" fill="#576e73">调用请求、真实执行、结果反馈，是三个不同的环节。</text>
+</g></svg>
